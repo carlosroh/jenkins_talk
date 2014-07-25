@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <title>Jenkins CI</title>
+
+  <!-- Required stylesheet -->
+  <link rel="stylesheet" media="screen" href="core/deck.core.css">
+
+  <!-- Extension CSS files go here. Remove or add as needed. -->
+  <link rel="stylesheet" media="screen" href="extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/style/web-2.0.css">
+
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/transition/horizontal-slide.css">
+
+  <!-- Basic black and white print styles -->
+  <link rel="stylesheet" media="print" href="core/print.css">
+
+  <!-- Required Modernizr file -->
+  <script src="modernizr.custom.js"></script>
+</head>
+<body>
+  <div class="deck-container">
+
+    <!-- Begin slides. Just make elements with a class of slide. -->
+
+    <section class="slide">
+      <h1 align="center"><img src="img/jenkins_logo.png" /></h1>
+    </section>
+
+    <section class="slide">
+      <h2>¿Que es Jenkins CI?</h2>
+      <ul>
+        <li class="slide">Es una aplicación que supervisa las ejecuciones de trabajos repetidos.</li>
+        <ul class="slide">Esta enfocado en...
+          <li class="slide">Construir y testear proyectos de software.</li>
+          <li class="slide">Monitorear ejecuciones de trabajos/tareas externas.</li>
+        </ul>
+        <li class="slide">Técnicamente es Alfred Pennyworth de los developers.</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>¿Quien lo usa?</h2>
+      <ul>
+        <li>Atmel</li>
+        <li><a href="https://www.cloudbees.com/jenkins-user-conference-2011-session-abstracts.cb#RyanCampbell" class="external-link" rel="nofollow">CloudBees</a></li>
+        <li><a href="http://dell.com" class="external-link" rel="nofollow">Dell</a></li>
+        <li><a href="https://www.ebayopensource.org/hudson/" class="external-link" rel="nofollow">eBay</a></li>
+        <li><a href="http://scottchacon.com/2011/08/31/github-flow.html" class="external-link" rel="nofollow">GitHub</a></li>
+        <li><a href="http://blogs.jfrog.org/2011/04/first-continuous-integration-summit.html" class="external-link" rel="nofollow">LinkedIn</a></li>
+        <li>Michelin</li>
+        <li>NASA</li>
+        <li><a href="http://www.slideshare.net/adrianco/netflix-velocity-conference-2011/46" class="external-link" rel="nofollow">Netflix</a></li>
+        <li>Nokia Siemens Networks</li>
+        <li>Sony</li>
+        <li><a href="http://highscalability.com/blog/2012/2/13/tumblr-architecture-15-billion-page-views-a-month-and-harder.html" class="external-link" rel="nofollow">Tumblr</a></li>
+        <li><a href="http://digital.cabinetoffice.gov.uk/govuk-launch-colophon/" class="external-link" rel="nofollow">UK Government</a></li>
+        <li><a href="https://www.cloudbees.com/jenkins-user-conference-2011-session-abstracts.cb#DeanYu" class="external-link" rel="nofollow">Yahoo!</a></li>
+        <li>Muchos otros...</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2 align="center">Instalación</h2>
+      <ul class="slide"><strong>Mediante un .war</strong>
+        <li>Java Runtime Environment (JRE) 1.6 o superior</li>
+        <li>Descarga <a href="http://mirrors.jenkins-ci.org/war/latest/jenkins.war">jenkins,war</a></li>
+        <li>Ejecutas java -jar jenkins.war
+        <br>Si requiere instalar alguna dependencia, aqui se le pedirá.</li>
+        <li>Entrar a jenkins a travez del puerto 8080, por ejemplo <a href="http://carlosroh.com:8080">carlosroh:com:8080</a></li>
+      </ul>
+
+      <ul class="slide"><strong>Ubuntu/Debian</strong>
+        <pre>$ wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
+$ sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
+$ sudo apt-get update
+$ sudo apt-get install jenkins
+        </pre>
+      </ul>
+    </section> 
+
+    <section class="slide">
+      <h2>Plugins</h2>
+      <ul><strong>GitHub</strong>
+        <li>Instalación manual <s>como los hombres</s>
+          <pre>
+$ wget http://updates.jenkins-ci.org/download/plugins/github/1.9.1/github.hpi
+$ cp * $JENKINS_HOME/plugins
+$ servjenkins restart
+          </pre>
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Plugins</h2>
+      <ul><strong>GitHub</strong>
+        <li>A la windows
+          <p>Administrar Jenkins > Administrar plugins > Todos los plugins</p>
+          <img src="img/plugins_available.png" />
+          <p>Reiniciar Jenkins</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Plugins</h2>
+      <ul><strong>GitHub</strong>
+        <li>A la windows
+          <p>Administrar Jenkins > Administrar plugins > Configuración avanzada</p>
+          <img src="img/plugin_instal.png" />
+          <p>Reiniciar Jenkins</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Demo time...</h2>
+      <img src="img/chuck-norris.jpg" />
+      <center><h4>Alguien esta listo para tronar mi demo...</h4></center>
+    </section>
+
+    <section class="slide">
+      <h2>Demo time...</h2>
+      <ul class="incremental">TODO List... (ustedes no han visto nada)
+        <li>Instalar el plugin de GitHub</li>
+        <li>Configurar el proyecto</li>
+        <li>Agregar los webhooks requeridos por GitHub</li>
+        <li>Crear el token de autentificacion en la cuenta personal de GitHub</li>
+        <li>Muchas cosas mas...</li>
+      <center><h4>Alguien esta listo para tronar mi demo...</h4></center>
+    </section>
+
+    <section class="slide">
+      <h2>Pregunta existencial...</h2>
+      <strong>Continuous Integration vs Continuous Deployment vs Continuous Delivery?</strong>
+      <ul class="incremental">
+        <li class="slide"><strong>Continuous Integration (CI)</strong> is the practice, in software engineering, of merging all developer working copies with a shared mainline several times a day.</li>
+        <li class="slide"><strong>Continuous Delivery (CD),</strong> a logical step forward from continuous integration. If your tests are run constantly, and you trust your tests to provide a guarantee of quality, then it becomes possible to release your software at any point in time.</li>
+        <li class="slide"><strong>Continuous Deployment (CD)</strong> is the ultimate culmination of this process; it’s the actual delivery of features and fixes to the customer as soon as they are ready.</li>
+      </ul>
+      <strong>Estaría chida una charla de esta teoría</strong>
+    </section>
+
+    <section class="slide">
+      <h2 style="text-align: center;">Fin</h2>
+      <img src="img/chuck-norris-approved.jpg" />
+    </section>
+
+    <section class="slide">
+      <h2>Referencias</h2>
+      <ul>
+        <li>https://wiki.jenkins-ci.org/display/JENKINS/GitHub+Plugin#GitHubPlugin-GithubPlugin</li>
+        <li>https://www.digitalocean.com/community/tutorials/how-to-install-and-use-jenkins-on-ubuntu-12-04</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <img src="img/chuck-norris-approved.jpg" />
+    </section>
+    <!-- End slides. -->
+
+    <!-- Begin extension snippets. Add or remove as needed. -->
+
+    <!-- deck.navigation snippet -->
+    <div aria-role="navigation">
+      <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+      <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+    </div>
+
+    <!-- deck.status snippet -->
+    <p class="deck-status" aria-role="status">
+      <span class="deck-status-current"></span>
+      /
+      <span class="deck-status-total"></span>
+    </p>
+
+    <!-- deck.goto snippet -->
+    <form action="." method="get" class="goto-form">
+      <label for="goto-slide">Go to slide:</label>
+      <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+      <datalist id="goto-datalist"></datalist>
+      <input type="submit" value="Go">
+    </form>
+
+    <!-- End extension snippets. -->
+  </div>
+
+<!-- Required JS files. -->
+<script src="jquery.min.js"></script>
+<script src="core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<script src="extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+  $(function() {
+    $.deck('.slide');
+  });
+</script>
+</body>
+</html>
